@@ -1,0 +1,44 @@
+.quiz-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.answers {
+  list-style: none;
+  padding: 0;
+}
+
+.answers li {
+  margin-bottom: 1rem;
+}
+
+.answers button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answers button:hover {
+  background-color: #2980b9;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
