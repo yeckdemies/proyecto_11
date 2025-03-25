@@ -1,7 +1,25 @@
-* {
+:root {
+  --primary-color: #4f46e5;
+  --primary-light: #6366f1;
+  --accent-color: #14b8a6;
+  --danger-color: #ef4444;
+
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-page: #f9fafb;
+  --bg-container: #ffffff;
+
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  --border-radius: 12px;
+
+  --font-family: 'Inter', sans-serif;
+  --transition: all 0.2s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
 }

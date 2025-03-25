@@ -1,24 +1,19 @@
 .notfound-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 4rem 2rem;
   min-height: 80vh;
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-  text-align: center;
-  border-radius: 12px;
+  background: var(--background-gradient);
+  border-radius: var(--border-radius);
 }
 
 .notfound-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: var(--text-color-dark);
 }
 
 .notfound-container p {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--text-color-light);
   margin-bottom: 2rem;
   max-width: 600px;
 }

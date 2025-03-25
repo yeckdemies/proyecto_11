@@ -1,36 +1,40 @@
 .result-container {
-  text-align: center;
   padding: 3rem 2rem;
+  background-color: var(--bg-container);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
 }
 
 .result-container h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: #2c3e50;
+  font-size: 2rem;
+  color: var(--text-dark);
 }
 
 .result-container p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-light);
 }
 
 .result-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .result-buttons button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #3498db;
+  padding: 0.8rem 1.4rem;
+  background-color: var(--accent-color);
   border: none;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
 }
 
 .result-buttons button:hover {
-  background-color: #2980b9;
+  opacity: 0.9;
 }
