@@ -10,13 +10,13 @@ const Home = () => {
   };
 
   return (
-    <div className='home-container'>
+    <main className='home-container'>
       <h1>¡Bienvenido al juego de preguntas!</h1>
       <p>Pon a prueba tus conocimientos y tu nivel de inglés</p>
       <button className='start-button' onClick={handleStart}>
         Comenzar
       </button>
-    </div>
+    </main>
   );
 };
 

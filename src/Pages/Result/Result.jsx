@@ -14,17 +14,18 @@ const Result = () => {
   };
 
   return (
-    <div className='result-container'>
-      <h1>¡Fin de Juego!</h1>
-      <p>
-        Tu puntuación es: <strong>{score}</strong>
-      </p>
-
-      <div className='result-buttons'>
+    <main className='result-container'>
+      <section>
+        <h1>¡Fin de Juego!</h1>
+        <p>
+          Tu puntuación es: <strong>{score}</strong>
+        </p>
+      </section>
+      <section className='result-buttons'>
         <button onClick={handlePlayAgain}>Volver a jugar</button>
         <button onClick={handleGoToHistory}>Ver historial</button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

@@ -2,9 +2,9 @@ import './NotFound.css';
 
 const NotFound = () => {
   return (
-    <div className='notfound-container'>
+    <main className='notfound-container'>
       <h1>¡Ooopss! Página no encontrada</h1>
-    </div>
+    </main>
   );
 };
 

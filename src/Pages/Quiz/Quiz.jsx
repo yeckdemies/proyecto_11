@@ -87,25 +87,29 @@ const Quiz = () => {
   const q = questions[current];
 
   return (
-    <div className='quiz-container'>
-      <h2>
-        Pregunta {current + 1} de {questions.length}
-      </h2>
-      <p
-        className='question'
-        dangerouslySetInnerHTML={{ __html: q.question }}
-      />
-      <ul className='answers'>
-        {shuffledAnswers.map((ans, index) => (
-          <li key={index}>
-            <button
-              onClick={() => handleAnswer(ans)}
-              dangerouslySetInnerHTML={{ __html: ans }}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main className='quiz-container'>
+      <section>
+        <h2>
+          Pregunta {current + 1} de {questions.length}
+        </h2>
+        <p
+          className='question'
+          dangerouslySetInnerHTML={{ __html: q.question }}
+        />
+      </section>
+      <section>
+        <ul className='answers'>
+          {shuffledAnswers.map((ans, index) => (
+            <li key={index}>
+              <button
+                onClick={() => handleAnswer(ans)}
+                dangerouslySetInnerHTML={{ __html: ans }}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 };
 

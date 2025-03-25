@@ -15,20 +15,22 @@ const History = () => {
   };
 
   return (
-    <div className='history-container'>
+    <main className='history-container'>
       <h1>Histórico de puntuaciones</h1>
 
       {history.length === 0 ? (
         <p>No hay partidas guardadas.</p>
       ) : (
-        <ul className='history-list'>
-          {history.map((entry, index) => (
-            <li key={index}>
-              <span className='history-date'>{entry.date}</span>
-              <span className='history-score'>Puntuación: {entry.score}</span>
-            </li>
-          ))}
-        </ul>
+        <section>
+          <ul className='history-list'>
+            {history.map((entry, index) => (
+              <li key={index}>
+                <time className='history-date'>{entry.date}</time>
+                <span className='history-score'>Puntuación: {entry.score}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       {history.length > 0 && (
@@ -36,7 +38,7 @@ const History = () => {
           Borrar historial
         </button>
       )}
-    </div>
+    </main>
   );
 };
 
