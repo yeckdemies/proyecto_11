@@ -6,7 +6,7 @@ const History = () => {
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('trivia-history')) || [];
-    setHistory(stored.reverse()); // Lo más reciente primero
+    setHistory(stored.reverse());
   }, []);
 
   const clearHistory = () => {

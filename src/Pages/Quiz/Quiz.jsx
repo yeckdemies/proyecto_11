@@ -7,24 +7,39 @@ const Quiz = () => {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const res = await fetch(
-          'https://opentdb.com/api.php?amount=10&type=multiple'
-        );
-        const data = await res.json();
+  const fetchQuestions = async (retries = 3, delay = 500) => {
+    try {
+      setLoading(true);
+      const res = await fetch(
+        'https://opentdb.com/api.php?amount=10&type=multiple'
+      );
+
+      if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+
+      const data = await res.json();
+
+      if (data.results && data.results.length > 0) {
         setQuestions(data.results);
         setLoading(false);
-      } catch (error) {
-        console.error('Error cargando preguntas:', error);
+      } else {
+        throw new Error('No se obtuvieron preguntas.');
       }
-    };
+    } catch (err) {
+      if (retries > 0) {
+        setTimeout(() => fetchQuestions(retries - 1, delay), delay);
+      } else {
+        setError(err.message);
+        setLoading(false);
+      }
+    }
+  };
 
+  useEffect(() => {
     fetchQuestions();
   }, []);
 
@@ -61,6 +76,12 @@ const Quiz = () => {
   };
 
   if (loading) return <p className='loading'>Cargando preguntas...</p>;
+  if (error)
+    return (
+      <p className='loading error'>
+        Ooops! Ha ocurrido un error, recarga la página. Detalle: {error}.
+      </p>
+    );
   if (!questions[current]) return <p>No hay preguntas disponibles</p>;
 
   const q = questions[current];
